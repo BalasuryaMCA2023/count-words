@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Words Count</title>
+    <style>
+        div{
+            background-color: rgb(72, 184, 249);
+            margin: 0 500px;
+            height: 650px;
+            width: 650px;
+            border-radius: 25px;
+        }
+
+        h1{
+            text-align: center;
+            text-transform: capitalize;
+            font-size: 50px;
+        }
+        label{
+            margin: 0 255px;
+            font-size: 25px;
+        }
+        input{
+            margin: 0 60px;
+            height: 100px;
+            width: 500px;
+            border-radius: 20px;
+        }
+        textarea{
+            margin: 0 60px;
+            height: 250px;
+            width: 500px;
+            border-radius: 25px;
+        }
+        button{
+            margin: 0 200px;
+            width: 250px;
+            height: 30px;
+            border-radius: 75px;
+            background-color: rgb(103, 5, 250);
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <u><h1>Count the words</h1></u>
+   <u><label> Input words</label></u>
+    <br/>
+    <br/>
+    <input id="para" type="string" placeholder="Enter the words"></input>
+    <br/>
+    <br/>
+    <button onclick="countWords()">count</button>
+    <br/>
+    <br/>
+    <br/>
+   <u><label> Words count:</label></u>
+    <br/>
+    <br/>
+    <textarea id="output" placeholder="Total Words Const"></textarea>    
+</div>
+<script>
+    function countWords() {
+    // get the value in input box
+      let text = document.getElementById('para').value;
+    
+      //remove extra 
+      text = text.replace(/[.,]/g, "");
+    
+      text = text.toUpperCase();
+    
+      const wordArray = text.split(" ");
+    
+      console.log(wordArray);
+    
+      const wordCount = {};
+    
+      wordArray.forEach((item) => {
+    
+        if (wordCount[item] == null) wordCount[item] = 1;
+    
+        else {
+          wordCount[item] += 1;
+        }
+    
+      });
+    
+      let myArray = Object.entries(wordCount);
+    
+      let bArray = myArray.sort(function (a, b) { return [b[1] - a[1]] });
+    
+      bArray = bArray.slice(0, myArray.length);
+    
+      return document.getElementById('output').innerHTML = bArray;
+    
+    }
+    
+    
+    </script>
+</body>
+</html>
