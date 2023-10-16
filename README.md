@@ -13,17 +13,9 @@
    - The `countWords()` function is defined to perform the word count operation:
      - It first retrieves the text entered by the user from the input field with the id "para."
 
-     - The code then removes punctuation (periods and commas) from the input text using a regular expression.
+     - The code then removes punctuation (periods and commas) from the input text using a regular expression..
 
-     - It converts the text to uppercase to make the word count case-insensitive.
-
-     - The input text is split into an array of words using the space character as a delimiter.
-
-     - The code initializes an empty object `wordCount` to store word frequencies.
-
-     - It iterates through the array of words and counts the frequency of each word, storing the results in the `wordCount` object.
-
-     - The word frequency data is then transformed into an array of key-value pairs using `Object.entries(wordCount)`.
+     - The word frequency data is then transformed into an array of key-value pairs using `Object.entries(wordCount)`
 
      - The array of key-value pairs is sorted in descending order based on word frequency using the `sort()` method.
 
@@ -33,3 +25,9 @@
 
 4. **User Interaction**:
    - When a user enters words into the input box and clicks the "Count" button, the `countWords()` function is called, and the word count results are displayed in the textarea.
+  
+   - https://github.com/BalasuryaMCA2023/count-words/assets/139736173/fe467311-ae76-490c-865a-bb6a9d8faa3c
+  
+   - ## Future Improvements
+  
+     That is currently  for only count words  Future Improvements include using the slice method in javascript improve count texts for using Javascript are other languages in the future 
